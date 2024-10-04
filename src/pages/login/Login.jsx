@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../../services/index/users';
 import toast from 'react-hot-toast'
+import { FcGoogle } from "react-icons/fc";
 
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../store/reducers/userReducers';
@@ -112,8 +113,15 @@ const Login = () => {
             <button 
             type='submit' 
             disabled={!isValid || isLoading}
-            className='bg-primary text-white font-bold text-lg py-4 px-8 w-full rounded-lg my-6 disabled:opacity-70 disabled:cursor-not-allowed'>
+            className='bg-primary text-white font-bold text-lg py-3 px-6 w-full rounded-lg my-6 disabled:opacity-70 disabled:cursor-not-allowed'>
               Sign In
+            </button>
+            <button
+            disabled={!isValid || isLoading}
+              type="submit"
+              className="flex justify-center items-center bg-primary text-white font-bold text-lg py-3 px-6 w-full rounded-lg mb-4 disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              Sign In With Google <FcGoogle size={26} className="ml-4" />
             </button>
             <p className='text-sm font-semibold text-[#5a7184]'>
               Do not have an account?{" "} 
